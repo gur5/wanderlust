@@ -117,8 +117,10 @@ Feel free to get in touch with me for any further queries or support, happy to h
 
 We extend our heartfelt gratitude for your invaluable contribution to our project! Your efforts play a pivotal role in elevating Wanderlust to greater heights. 😊
 
+<!--
 <div>
 <a href="https://github.com/krishnaacharyaa/wanderlust/graphs/contributors">
   <img width="90%" src="https://contrib.rocks/image?repo=krishnaacharyaa/wanderlust" />
 </a>
 </div>
+-->
