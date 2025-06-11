@@ -31,32 +31,46 @@ _I'd love for you to make the most of this project - it's all about learning, he
 3. **Install Required Dependencies**
 
    ```bash
-   npm i
+   npm i # if not found goto https://nodejs.org/en/download
    ```
 
 4. **Set up your MongoDB Database**
 
+   **goto** https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/#std-label-install-mdb-community-ubuntu
+
+         sudo systemctl start mongod
+         sudo systemctl enable mongod
+         mongod --version
+         sudo systemctl status mongod
+         mongosh
    - Open MongoDB Compass and connect MongoDB locally at `mongodb://localhost:27017`.
 
-5. **Import sample data**
+6. **Import sample data**
 
    > To populate the database with sample posts, you can copy the content from the `backend/data/sample_posts.json` file and insert it as a document in the `wanderlust/posts` collection in your local MongoDB database using either MongoDB Compass or `mongoimport`.
 
    ```bash
-   mongoimport --db wanderlust --collection posts --file ./data/sample_posts.json --jsonArray
+   mongoimport --db wanderlust --collection posts --file ./data/sample_posts.json --jsonArray 
    ```
 
-6. **Configure Environment Variables**
+7. **Configure Environment Variables**
 
    ```bash
-   cp .env.sample .env
+   cp .env.sample .env  # cd backend
    ```
 
-7. **Start the Backend Server**
+8. **Start the Backend Server**
 
    ```bash
-   npm start
+   npm start # sometime show redis error
+
+   sudo apt update
+   sudo apt install redis-server
+   sudo systemctl enable redis-server
+   sudo systemctl start redis-server 
+   sudo systemctl status redis-server
    ```
+   
 
    > You should see the following on your terminal output on successful setup.
    >
@@ -88,9 +102,18 @@ _I'd love for you to make the most of this project - it's all about learning, he
 4. **Launch the Development Server**
 
    ```bash
-   npm run dev
-   ```
+   npm run dev # if expose then
 
+   npm run dev -- --host
+   
+   ```
+5. **If database not connected**
+
+         vi /forntend/.env.sample
+<change localhost to <your_public_ip>
+
+      cp .env.sample .env.local
+   
 ### Setting up with Docker
 
 1.  **Ensure Docker and Docker Compose are Installed**
