@@ -16,5 +16,7 @@
 >To populate the database with sample posts, you can copy the content from the backend/data/sample_posts.json file and insert it as a document in the wanderlust/posts collection in your local MongoDB database using either MongoDB Compass or mongoimport.
    
 
-          mongoimport --db wanderlust --collection posts --file ./data/sample_posts.json --jsonArray
-7.  
+       mongoimport --db wanderlust --collection posts --file ./data/sample_posts.json --jsonArray
+6. Configure Environment Variables
+
+       cp .env.sample .env  
